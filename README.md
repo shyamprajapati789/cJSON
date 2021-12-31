@@ -107,7 +107,8 @@ The function takes the following parameters as input.
         Default -> false
 
 The function returns a tuple of 3 values. The reason for this is to use a single function to evaluate JSON or Lists. Also this helps a bit on recursion.
-The first (or zeroth if that is how you want to count) value of the tuple is a std::map object. When evaluating a JSON this is the return you are intrested in. The second (or first...) element is a pointer to a jsonValue object. Evaluate a list, and this is the return you are looking for. The third element is used for recursion while evaluating and can be ignored.
+The first (or zeroth if that is how you want to count) value of the tuple is a std::map object. When evaluating a JSON this is the return you are intrested in. 
+The second (or first...) element is a pointer to a jsonValue object. Evaluate a list, and this is the return you are looking for. The third element is used for recursion while evaluating and can be ignored.
 */
 
 ```
