@@ -150,7 +150,7 @@ namespace jsonSpace
 
       if (tVal->nextLink != NULL) 
       {
-        std::cout << lSpace << tKey << " : " << std::endl;
+        std::cout << lSpace << '"' << tKey << '"' << " : " << std::endl;
         onPrintList(tVal, lSpace + "  ");
       }
 
@@ -273,6 +273,7 @@ namespace jsonSpace
           if (doVerbose) { std::cout << "\n DICT Added Number -> " << tKey << " : " << tData.substr(vS, vE-vS+1) << std::endl; }
         }
 
+        if (tData[vE] == '}' || tData[vE] == ']') { vE -= 1; }
         sI = vE+1;
       }
 
