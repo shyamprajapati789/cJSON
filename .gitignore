@@ -2,3 +2,4 @@
 .vscode/
 **.exe
 _demoUse.cpp
+_cjson.cpp
