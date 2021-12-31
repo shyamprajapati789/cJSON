@@ -142,7 +142,11 @@ namespace jsonSpace
       else if (tVal->valType == 0 && !tVal->bVal) { outVal = "false"; }
 
       if (tVal->valType < 3 && tVal->nextLink == NULL) { std::cout << lSpace << '"' << tKey << '"' << " : " << outVal << ", " << std::endl; }
-      else if (tVal->valType == 3 && tVal->nextLink == NULL){ onPrintJSON(tVal->jVal, lSpace + "  " ); }
+      else if (tVal->valType == 3 && tVal->nextLink == NULL)
+      {
+        std::cout << lSpace << '"' << tKey << '"' << " : " << std::endl;
+        onPrintJSON(tVal->jVal, lSpace + "  " ); 
+      }
 
       if (tVal->nextLink != NULL) 
       {
