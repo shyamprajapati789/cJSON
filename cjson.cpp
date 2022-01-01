@@ -228,6 +228,8 @@ namespace jsonSpace
         std::size_t vS = kE+2;
         std::size_t vE = vS+1;
 
+        if (tData[vS] == ' ') { vS += 1;}
+
         if (tData[vS] == '"')
         {
           // Handle String
@@ -290,6 +292,8 @@ namespace jsonSpace
         size_t vE = vS+1;
 
         if ( sI >= enIdx-1 || tData[sI] == ']' || tData[sI] == ']' || tData[sI+1] == ']') { break; }
+
+        if (tData[vS] == ' ') { vS += 1;}
 
         if (tData[vS] == '"')
         {
