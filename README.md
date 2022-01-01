@@ -1,7 +1,7 @@
 # ``cJSON``
 ## Simple and lightweight JSON and List parser in C++.
 
-cJSON is simple and lightweight JSON and Python stype List parser. Given a JSON compliant String (std::string), the code returns a C++ Map (std::map) object. No extra libraries required. Just copy and paste cjson.cpp in your repo/code directory, include the file in your code and call the function onEvaluate(yourString).
+cJSON is simple and lightweight JSON and Python style List parser. Given a JSON compliant String (std::string), the code returns a C++ Map (std::map) object. No extra libraries required. Just copy and paste cjson.cpp in your repo/code directory, include the file in your code and call the function onEvaluate(yourString).
 
 ## Features
 
@@ -88,7 +88,7 @@ Data : {"k0":5964123,"k1":{"j0":null,"j1":"someString"},"k2":false,"k3":[7412,43
 
 > Note : All keys and string values "within" the std::string variable must be enclosed in double quotes("). For example "{"someKey" : "someValue"}". When declaring such a string in C++, the quotes must be backed by a "backslash" (\\). Hence, the example becomes "{\\"someKey\\" : \\"someValue\\"}". For Lists a valid example is "[234, NULL, \\"someString\\", false]"
 
-# onEvalute(...) Function.
+# onEvaluate(...) Function.
 The ```onEvaluate(...)``` function is what does the hardwork.
 ```c++
 // onEvaluate() defination.
