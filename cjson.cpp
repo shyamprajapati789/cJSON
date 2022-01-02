@@ -145,7 +145,17 @@ namespace jsonSpace
       else if (tVal->valType == 3 && tVal->nextLink == NULL)
       {
         std::cout << lSpace << '"' << tKey << '"' << " : " << std::endl;
+        if (tVal->isList)
+        {
+          lSpace += "  ";
+          std::cout << lSpace << "[" << std::endl;
+        }
         onPrintJSON(tVal->jVal, lSpace + "  " ); 
+        if (tVal->isList)
+        {
+          std::cout << lSpace << "]," << std::endl;
+          lSpace = lSpace.substr(0, lSpace.length()-2);
+        }
       }
 
       if (tVal->nextLink != NULL) 
@@ -156,7 +166,7 @@ namespace jsonSpace
 
     }
     lSpace = lSpace.substr(0, lSpace.length()-2);
-    std::cout << lSpace + "} " << std::endl;
+    std::cout << lSpace + "}, " << std::endl;
   }
 
   void onFreeListMem(jsonValue *lVal);
@@ -374,6 +384,7 @@ namespace jsonSpace
         prevVal = prevVal->prevLink;
       }
       prevVal = prevVal->nextLink;
+      prevVal->isList = true;
 
       return std::make_tuple(tMap, prevVal, sI+1);
     }
