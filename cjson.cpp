@@ -384,6 +384,8 @@ namespace jsonSpace
         prevVal = prevVal->prevLink;
       }
       prevVal = prevVal->nextLink;
+      delete prevVal->prevLink;
+      prevVal->prevLink = NULL;
       prevVal->isList = true;
 
       return std::make_tuple(tMap, prevVal, sI+1);
