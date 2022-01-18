@@ -179,7 +179,6 @@ namespace jsonSpace
     {
 
       if (itVal->valType == 3){ onFreeJSONMem(itVal->jVal); }
-
       if (itVal->nextLink_SL != NULL)  { onFreeListMem(itVal->nextLink_SL); }
 
       if (itVal->nextLink == NULL) { break; }
@@ -197,7 +196,7 @@ namespace jsonSpace
       std::string tKey = tIter->first;
       jsonValue* tVal = tIter->second;
       
-      if (tVal->valType == 3 && tVal->nextLink == NULL){ onPrintJSON(tVal->jVal); }
+      if (tVal->valType == 3 && tVal->nextLink == NULL){ onFreeJSONMem(tVal->jVal); }
       if (tVal->nextLink != NULL) { onFreeListMem(tVal); }
 
       delete tMap[tKey];
